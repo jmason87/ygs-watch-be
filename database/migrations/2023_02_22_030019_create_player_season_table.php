@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('player_season', function (Blueprint $table) {
             $table->id();
-            $table->uuid();
+            $table->uuid('uuid');
             $table->uuid('player_uuid');
             $table->uuid('season_uuid');
             $table->timestamps();
