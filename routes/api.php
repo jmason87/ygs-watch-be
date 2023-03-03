@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\SetController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,4 +25,12 @@ Route::controller(PlayerController::class)->group(function () {
     Route::post('/players', 'store');
     Route::put('/players/{uuid}', 'update');
     Route::delete('/players/{uuid}', 'destroy');
+});
+
+Route::controller(SetController::class)->group(function () {
+    Route::get('/sets', 'index');
+    Route::get('/sets/{uuid}', 'show');
+    Route::post('/sets', 'store');
+    Route::put('/sets/{uuid}', 'update');
+    Route::delete('/sets/{uuid}', 'destroy');
 });

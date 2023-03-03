@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Player;
-use App\Transformers\PlayerTransformer;
-use Illuminate\View\View;
 
 class PlayerController extends Controller
 {
