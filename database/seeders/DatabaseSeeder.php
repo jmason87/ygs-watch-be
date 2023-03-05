@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Player;
 use App\Models\Set;
+use App\Models\Season;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,8 +15,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $set = Set::factory()->create();
-
+        // Players
         Player::factory()
             ->count(2)
             ->for(Set::factory()->create())
@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
             ->count(2)
             ->for(Set::factory()->create())
             ->create();
+
+        // Sets
+
+        // Seasons
+        Season::factory()
+            ->count(5)
+            ->create();
+
 
         // \App\Models\User::factory(10)->create();
 

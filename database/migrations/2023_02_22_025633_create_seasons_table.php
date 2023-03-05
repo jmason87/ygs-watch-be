@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->uuid('uuid');
             $table->year('year');
-            $table->string('team');
+            $table->uuid('team_uuid');
             $table->integer('games_played');
             $table->integer('goals');
             $table->integer('assists');

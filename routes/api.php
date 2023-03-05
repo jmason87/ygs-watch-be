@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\SetController;
+use App\Http\Controllers\SeasonController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,12 @@ Route::controller(SetController::class)->group(function () {
     Route::post('/sets', 'store');
     Route::put('/sets/{uuid}', 'update');
     Route::delete('/sets/{uuid}', 'destroy');
+});
+
+Route::controller(SeasonController::class)->group(function () {
+    Route::get('/seasons', 'index');
+    Route::get('/seasons/{uuid}', 'show');
+    Route::post('/seasons', 'store');
+    Route::put('/seasons/{uuid}', 'update');
+    Route::delete('/seasons/{uuid}', 'destroy');
 });
