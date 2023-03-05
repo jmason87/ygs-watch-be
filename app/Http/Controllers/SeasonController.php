@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Season;
 use Illuminate\Http\Request;
 
-class SetController extends Controller
+class SeasonController extends Controller
 {
     public function index(Request $request)
     {

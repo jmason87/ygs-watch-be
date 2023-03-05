@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Player;
-use App\Models\Set;
 use App\Models\Season;
+use App\Models\Set;
+use App\Models\Team;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -33,6 +34,10 @@ class DatabaseSeeder extends Seeder
             ->count(5)
             ->create();
 
+        // Team
+        Team::factory()
+            ->count(5)
+            ->create();
 
         // \App\Models\User::factory(10)->create();
 

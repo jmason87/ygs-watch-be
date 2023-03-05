@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\PlayerController;
-use App\Http\Controllers\SetController;
 use App\Http\Controllers\SeasonController;
+use App\Http\Controllers\SetController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -43,4 +44,12 @@ Route::controller(SeasonController::class)->group(function () {
     Route::post('/seasons', 'store');
     Route::put('/seasons/{uuid}', 'update');
     Route::delete('/seasons/{uuid}', 'destroy');
+});
+
+Route::controller(TeamController::class)->group(function () {
+    Route::get('/teams', 'index');
+    Route::get('/teams/{uuid}', 'show');
+    Route::post('/teams', 'store');
+    Route::put('/teams/{uuid}', 'update');
+    Route::delete('/teams/{uuid}', 'destroy');
 });
