@@ -2,19 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Player;
+use Illuminate\Http\Request;
 
 class PlayerController extends Controller
 {
     public function index(Request $request)
     {
-        return Player::all();
+        return Player::all()->load(['set']);
     }
+
     public function show(Request $request, $uuid)
     {
         return Player::findOrFail($uuid);
     }
+
     public function store(Request $request)
     {
         $player = new Player;
@@ -28,12 +30,14 @@ class PlayerController extends Controller
         $player->set_uuid = $request->input('set_uuid');
         $player->save();
     }
+
     public function update(Request $request, $uuid)
     {
         $player = Player::findOrFail($uuid);
         $player->name = $request->input('name');
         $player->save();
     }
+
     public function destroy(Request $request, $uuid)
     {
         $player = Player::findOrFail($uuid);

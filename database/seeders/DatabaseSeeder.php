@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Player;
 use App\Models\Set;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,8 +14,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Player::factory()->count(5)->create();
-        Set::factory()->count(5)->create();
+        // $set = Set::factory()->create();
+
+        Player::factory()
+            ->count(2)
+            ->for(Set::factory()->create())
+            ->create();
+
+        Player::factory()
+            ->count(2)
+            ->for(Set::factory()->create())
+            ->create();
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids; 
 
 class Player extends Model
 {
@@ -12,4 +12,9 @@ class Player extends Model
     use HasUuids;
 
     protected $primaryKey = 'uuid';
+
+    public function Set()
+    {
+        return $this->belongsTo(Set::class);
+    }
 }
