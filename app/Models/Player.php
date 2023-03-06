@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Player extends Model
 {
@@ -13,8 +14,18 @@ class Player extends Model
 
     protected $primaryKey = 'uuid';
 
-    public function Set()
+    public function set()
     {
         return $this->belongsTo(Set::class);
+    }
+
+    public function season()
+    {
+        return $this->hasMany(Season::class);
+    }
+
+    public function seasonTeam(): HasOneThrough
+    {
+        return $this->hasOneThrough(Team::class, Season::class);
     }
 }

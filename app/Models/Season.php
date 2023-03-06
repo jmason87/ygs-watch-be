@@ -12,4 +12,9 @@ class Season extends Model
     use HasUuids;
 
     protected $primaryKey = 'uuid';
+
+    public function team()
+    {
+        return $this->belongsTo(Team::class);
+    }
 }

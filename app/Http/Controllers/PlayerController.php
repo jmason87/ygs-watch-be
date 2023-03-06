@@ -9,7 +9,7 @@ class PlayerController extends Controller
 {
     public function index(Request $request)
     {
-        return Player::all()->load(['set']);
+        return Player::with(['set', 'season', 'season.team'])->get();
     }
 
     public function show(Request $request, $uuid)

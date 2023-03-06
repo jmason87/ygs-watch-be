@@ -13,6 +13,6 @@ class SetSeeder extends Seeder
     public function run(): void
     {
         Set::factory(5)
-        ->create();
+            ->create();
     }
 }

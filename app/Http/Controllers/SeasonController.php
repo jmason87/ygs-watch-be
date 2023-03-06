@@ -9,7 +9,7 @@ class SeasonController extends Controller
 {
     public function index(Request $request)
     {
-        return Season::all();
+        return Season::with(['team'])->get();
     }
 
     public function show(Request $request, $uuid)

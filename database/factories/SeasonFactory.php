@@ -23,6 +23,7 @@ class SeasonFactory extends Factory
             'goals' => fake()->randomDigit(),
             'assists' => fake()->randomDigit(),
             'points' => fake()->randomDigit(),
+            'player_uuid' => fake()->uuid(),
         ];
     }
 }
