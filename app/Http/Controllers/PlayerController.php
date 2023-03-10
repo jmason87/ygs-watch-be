@@ -14,7 +14,7 @@ class PlayerController extends Controller
 
     public function show(Request $request, $uuid)
     {
-        return Player::with(['set', 'season', 'season.team'])->findOrFail($uuid);;
+        return Player::with(['set', 'season', 'season.team'])->findOrFail($uuid);
     }
 
     public function store(Request $request)

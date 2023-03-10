@@ -2,9 +2,8 @@
 
 namespace Tests\Unit;
 
-use App\Http\Controllers\SetController;
-use Illuminate\Http\Request;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Http\Request;
 use Tests\TestCase;
 
 class SetControllerTest extends TestCase
@@ -17,6 +16,5 @@ class SetControllerTest extends TestCase
         $response = $this->get('/sets');
         // Assert that the response is successful
         $response->assertOk();
-
     }
 }
