@@ -27,4 +27,22 @@ class PlayerControllerTest extends TestCase
         // Assert that the response is successful
         $response->assertOk();
     }
+
+    public function test_store_route_ok()
+    {
+        $payload = [
+            'name' => 'test player',
+            'position' => 'goalie',
+            'age' => 25,
+            'birthdate' => '1987/11/12',
+            'year_drafted' => '2005',
+            'round' => 1,
+            'pick' => 1,
+            'set_uuid' => '00000000-0000-0000-0000-000000000001',
+        ];
+        // Make a request to the index method
+        $response = $this->post('/players', $payload);
+        // Assert that the response is successful
+        $response->assertOk();
+    }
 }
