@@ -45,4 +45,25 @@ class PlayerControllerTest extends TestCase
         // Assert that the response is successful
         $response->assertOk();
     }
+
+    public function test_update_route_ok()
+    {
+        $player = Player::factory()->create();
+        $updated_player = [
+            'name' => 'test player',
+        ];
+        // Make a request to the index method
+        $response = $this->put("/players/$player->uuid", $updated_player);
+        // Assert that the response is successful
+        $response->assertOk();
+    }
+
+    public function test_delete_route_ok()
+    {
+        $player = Player::factory()->create();
+        // Make a request to the index method
+        $response = $this->delete("/players/$player->uuid");
+        // Assert that the response is successful
+        $response->assertOk();
+    }
 }
