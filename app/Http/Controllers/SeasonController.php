@@ -22,6 +22,7 @@ class SeasonController extends Controller
         $season = new Season;
         $season->year = $request->input('year');
         $season->team_uuid = $request->input('team_uuid');
+        $season->player_uuid = $request->input('player_uuid');
         $season->games_played = $request->input('games_played');
         $season->goals = $request->input('goals');
         $season->assists = $request->input('assists');
@@ -34,6 +35,7 @@ class SeasonController extends Controller
         $season = Season::findOrFail($uuid);
         $season->year = $request->input('year');
         $season->team_uuid = $request->input('team_uuid');
+        $season->player_uuid = $request->input('player_uuid');
         $season->games_played = $request->input('games_played');
         $season->goals = $request->input('goals');
         $season->assists = $request->input('assists');
