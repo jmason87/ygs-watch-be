@@ -10,12 +10,11 @@ class PlayerController extends Controller
     public function index(Request $request)
     {
         if ($request->query()) {
-
             $players = Player::with(['set', 'season', 'season.team'])->get();
             $filterPlayers = [];
             foreach ($players as $player) {
-                if ($player['set']['year'] == $request->query('year')) {
-                    array_push($filter, $player);
+                if ($player['set_uuid'] == $request->query('set_uuid')) {
+                    array_push($filterPlayers, $player);
                 };
             }
             return $filterPlayers;
