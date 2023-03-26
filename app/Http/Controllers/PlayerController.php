@@ -9,7 +9,19 @@ class PlayerController extends Controller
 {
     public function index(Request $request)
     {
-        return Player::with(['set', 'season', 'season.team'])->get();
+        if ($request->query()) {
+
+            $players = Player::with(['set', 'season', 'season.team'])->get();
+            $filterPlayers = [];
+            foreach ($players as $player) {
+                if ($player['set']['year'] == $request->query('year')) {
+                    array_push($filter, $player);
+                };
+            }
+            return $filterPlayers;
+        } else {
+            return Player::with(['set', 'season', 'season.team'])->get();
+        }
     }
 
     public function show(Request $request, $uuid)
