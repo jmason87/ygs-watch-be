@@ -15,8 +15,9 @@ class PlayerController extends Controller
             foreach ($players as $player) {
                 if ($player['set_uuid'] == $request->query('set_uuid')) {
                     array_push($filterPlayers, $player);
-                };
+                }
             }
+
             return $filterPlayers;
         } else {
             return Player::with(['set', 'season', 'season.team'])->get();
