@@ -16,12 +16,17 @@ return new class extends Migration
             $table->uuid('uuid');
             $table->string('name');
             $table->string('position');
-            $table->integer('age');
+            $table->string('height');
+            $table->string('weight');
+            $table->uuid('card_team_uuid');
             $table->date('birthdate');
-            $table->year('year_drafted');
-            $table->integer('round');
-            $table->integer('pick');
+            $table->integer('age');
+            $table->year('year_drafted')->nullable();
+            $table->integer('round')->nullable();
+            $table->integer('round_pick')->nullable();
+            $table->integer('overall_pick')->nullable();
             $table->uuid('set_uuid');
+            $table->uuid('draft_team_uuid')->nullable();
             $table->timestamps();
         });
     }

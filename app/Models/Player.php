@@ -28,4 +28,15 @@ class Player extends Model
     {
         return $this->hasOneThrough(Team::class, Season::class);
     }
+    
+    public function cardTeam()
+    {
+        return $this->belongsTo(Team::class, 'card_team_uuid');
+    }
+
+    public function draftTeam()
+    {
+        return $this->belongsTo(Team::class, 'draft_team_uuid');
+    }
+
 }

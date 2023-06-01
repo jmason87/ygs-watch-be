@@ -19,12 +19,16 @@ class PlayerFactory extends Factory
         return [
             'name' => fake()->name(),
             'position' => fake()->word(),
-            'age' => fake()->randomNumber(2, true),
+            'height' => fake()->randomDigit(),
+            'weight' => fake()->randomDigit(),
+            'card_team_uuid' => fake()->uuid(),
             'birthdate' => fake()->date('Y_m_d'),
+            'age' => fake()->randomNumber(2, true),
             'year_drafted' => fake()->year(),
             'round' => fake()->randomDigit(),
-            'pick' => fake()->randomDigit(),
+            'round_pick' => fake()->randomDigit(),
             'set_uuid' => fake()->uuid(),
+            'draft_team_uuid' => fake()->uuid(),
         ];
     }
 }

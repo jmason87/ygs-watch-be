@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         Player::factory()
             ->count(2)
             ->for(Set::factory()->create())
+            ->for(Team::factory()->create(), 'cardTeam')
+            ->for(Team::factory()->create(), 'draftTeam')
             ->has(Season::factory()->count(2)
                 ->for(Team::factory()->create()))
             ->create();

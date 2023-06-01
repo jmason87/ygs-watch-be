@@ -23,7 +23,16 @@ class SeasonFactory extends Factory
             'goals' => fake()->randomDigit(),
             'assists' => fake()->randomDigit(),
             'points' => fake()->randomDigit(),
+            'plus_minus' => fake()->randomDigit(),
             'player_uuid' => fake()->uuid(),
-        ];
+            'games_started' => fake()->randomDigit(),
+            'wins' => fake()->randomDigit(),
+            'losses' => fake()->randomDigit(),
+            'overtime_losses' => fake()->randomDigit(),
+            'goals_against' => fake()->randomDigit(),
+            'goals_against_average' => fake()->randomDigit(),
+            'save_percentage' => fake()->randomDigit(),
+            'shutouts' => fake()->randomDigit(),
+        ];    
     }
 }
