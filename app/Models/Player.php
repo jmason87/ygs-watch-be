@@ -16,7 +16,7 @@ class Player extends Model
 
     public function set()
     {
-        return $this->belongsTo(Set::class);
+        return $this->belongsToMany(Set::class);
     }
 
     public function season()

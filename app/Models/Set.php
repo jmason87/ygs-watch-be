@@ -12,4 +12,9 @@ class Set extends Model
     use HasUuids;
 
     protected $primaryKey = 'uuid';
+
+    public function player()
+    {
+        return $this->belongsToMany(Player::class);
+    }
 }

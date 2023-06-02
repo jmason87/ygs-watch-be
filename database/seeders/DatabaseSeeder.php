@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         // Players
         Player::factory()
             ->count(2)
-            ->for(Set::factory()->create())
+            ->has(Set::factory()->count(1))
             ->for(Team::factory()->create(), 'cardTeam')
             ->for(Team::factory()->create(), 'draftTeam')
             ->has(Season::factory()->count(2)
@@ -27,13 +27,13 @@ class DatabaseSeeder extends Seeder
             ->create();
         Player::factory()
             ->count(1)
-            ->for(Set::factory()->create())
+            ->has(Set::factory()->count(1))
             ->has(Season::factory()->count(3)
                 ->for(Team::factory()->create()))
             ->create();
         Player::factory()
             ->count(2)
-            ->for(Set::factory()->create())
+            ->has(Set::factory()->count(1))
             ->has(Season::factory()->count(1)
                 ->for(Team::factory()->create()))
             ->create();
